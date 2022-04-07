@@ -19,16 +19,18 @@ export default function Bodya () {
          sayac--;
          if(sayac<0) {
             sayac=bigImages.length;
-            $("#productMainImage").attr("src",bigImages[sayac]);
+            $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[sayac]);
         }
         else {
-        $("#productMainImage").attr("src",bigImages[sayac]);
+
+            $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[sayac]);
+
         }
         
     })
     $("#saA2").on("click", () => {
         sayac++;
-        if(sayac>4) {
+        if(sayac>3) {
         sayac=0;
         $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[sayac]);
         }
