@@ -19,20 +19,18 @@ export default function Bodya () {
          sayac--;
          if(sayac<0) {
             sayac=bigImages.length;
-            $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[3]);
+            $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[sayac]);
         }
         else {
-
-            $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[sayac]);
-
+        $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[sayac]);
         }
         
     })
     $("#saA2").on("click", () => {
         sayac++;
-        if(sayac>3) {
+        if(sayac>4) {
         sayac=0;
-        $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[0]);
+        $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[sayac]);
         }
         $("#productMainImage").attr("src",process.env.PUBLIC_URL+bigImages[sayac]);
     });
@@ -74,7 +72,7 @@ export default function Bodya () {
                     <h2 className="itemDetailTitle"> {Item.itemName} </h2>
                     <p className="itemDetailParagraph"> {Item.itemInfo}</p>
                     <h2 className="itemPrice">$ {priceWithDiscount}.00 <span className="discountAmount">{Item.discountRate}%</span></h2>
-                    <h3 className="itemOriginalPrice">${Item.normalPrice}.00</h3>
+                    <h3 className="itemOriginalPrice">$ {Item.normalPrice}.00</h3>
                 <div className="amountAndCheckout">
                     <input type="button" className="minusPlus" id="minusPiece" value="-" />
                     <h2 id="showPiece" className="itemAmount"> {pieceK} </h2>
